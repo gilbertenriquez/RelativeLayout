@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    Padding="0,20,0,0"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RelativeLayout.MainPage">
+
+    <RelativeLayout>
+        <BoxView BackgroundColor="White" x:Name="color"
+			RelativeLayout.HeightConstraint="{ConstraintExpression 
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=0.3}"
+                 
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1}" />
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1}"
+				
+			RelativeLayout.HeightConstraint="{ConstraintExpression 
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=0.3}">
+
+            <Label Text="$11.95" 
+                   TextColor="DarkSlateGray"  
+                   FontSize="60" 
+                   FontAttributes="Bold" />
+
+            <Button Text="Add $7.99 Credit" 
+                    BackgroundColor="#1695A3"
+                    BorderRadius="20" 
+                    HeightRequest="40"
+                    FontSize="15"
+                    FontAttributes="Bold" 
+                    TextColor="White" />
+        </StackLayout>
+
+        <StackLayout 
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1}"
+				
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=color,
+				Property=Height,
+				Factor=1,
+				Constant=30}">
+
+            <Label Text="Why Pay for the Credit?" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="14">
+                Because you can reach people who aren't on 
+                SkyApp by calling mobile and landline 
+                numbers, or spending SMS, at low-cost rates.
+            </Label>
+        </StackLayout>
+    </RelativeLayout>
+    
+</ContentPage>
